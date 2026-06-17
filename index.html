@@ -62,7 +62,7 @@
             border-radius: 10px;
         }
 
-        /* Message styling */
+        /* Base Message styling */
         p {
             max-width: 75%;
             padding: 10px 16px;
@@ -72,17 +72,15 @@
             animation: fadeIn 0.3s ease-in-out;
         }
 
-        /* Style for User (PS) - Styled as the Sender */
-        p:has(b:contains("PS")), 
-        p {
+        /* Fixed: Style for User (PS) - Aligns to the RIGHT */
+        p.ps-msg {
             align-self: flex-end;
             background-color: #ff4d6d;
             color: white;
             border-bottom-right-radius: 4px;
         }
 
-        /* Style for KV - Styled as the Receiver */
-        /* Since CSS can't easily parse innerHTML text without classes, we handle the dynamic distinction beautifully below in JS/CSS fallback */
+        /* Style for KV - Aligns to the LEFT */
         p.kv-msg {
             align-self: flex-start;
             background-color: #f0f2f5;
@@ -159,7 +157,7 @@
             let chatbox = document.getElementById("chatbox");
             if(!input) return;
  
-            // Injected a standard class 'ps-msg' into your exact string template to allow CSS styling
+            // Keeps your exact output structure but correctly hooks into the right-align CSS
             chatbox.innerHTML += `<p class="ps-msg"><b>PS:</b> ${document.getElementById("userInput").value.trim()}</p>`;
             let response = "I don't understand that phrase yet!";
             
@@ -169,7 +167,6 @@
                 response = "Dinner, Friday, You and I";
             }
  
-            // Injected a standard class 'kv-msg' into your exact string template to allow CSS styling
             chatbox.innerHTML += `<p class="kv-msg"><b>KV:</b> ${response}</p>`;
             document.getElementById("userInput").value = "";
             chatbox.scrollTop = chatbox.scrollHeight;
