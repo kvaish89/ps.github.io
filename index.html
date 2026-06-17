@@ -23,14 +23,12 @@
  
             chatbox.innerHTML += `<p><b>PS:</b> ${input}</p>`;
             let response = "I don't understand that phrase yet!";
- 
+            
             // Define your pre-programmed responses here
-            if (lower(input) === "whos there" || lower(input) === "who's there" || lower(input) === "whos there?" || lower(input) === "who's there?") {
+            if (input === "whos there" || input === "who's there" || input === "whos there?" || input === "who's there?") {
                 response = "What When";
-            } else if (lower(input) === "what when who" || lower(input) === "what when who?") {
+            } else if (input === "what when who" || input === "what when who?") {
                 response = "Dinner, Friday, You and I";
-            } else if (input === "secret phrase") {
-                response = "You found the hidden easter egg!";
             }
  
             chatbox.innerHTML += `<p><b>KV:</b> ${response}</p>`;
