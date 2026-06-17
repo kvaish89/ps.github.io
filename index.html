@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fun Chatbot</title>
+    <title>Knock Knock!</title>
     <style>
         body { font-family: sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; }
         #chatbox { height: 300px; border: 1px solid #ccc; overflow-y: scroll; padding: 10px; margin-bottom: 10px; }
@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-    <h2>My Custom Chatbot</h2>
+    <h2>Knock Knock!</h2>
     <div id="chatbox"></div>
     <input type="text" id="userInput" placeholder="Type something...">
     <button onclick="sendMessage()">Send</button>
@@ -25,10 +25,10 @@
             let response = "I don't understand that phrase yet!";
  
             // Define your pre-programmed responses here
-            if (input === "hello" || input === "hi") {
-                response = "Well, hello there friend!";
-            } else if (input === "tell me a joke") {
-                response = "Why don't scientists trust atoms? Because they make up everything!";
+            if (input === "Whos there" || input === "Who's there" || input === "Whos there?" || input === "Who's there?") {
+                response = "What When";
+            } else if (input === "What When Who" || input === "What When Who?") {
+                response = "Dinner, Friday, You and I";
             } else if (input === "secret phrase") {
                 response = "You found the hidden easter egg!";
             }
